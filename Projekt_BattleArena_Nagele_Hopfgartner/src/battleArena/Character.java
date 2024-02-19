@@ -31,5 +31,10 @@ public abstract class Character {
 	public void setSpecialAbilityActive(boolean specialAbilityActive) {
 		this.specialAbilityActive = specialAbilityActive;
 	}
-
+	
+	public abstract void getDamage(int points);
+	public abstract void attack(Character enemy);
+	public abstract void activateSpecialAbility();
+	public abstract void deactivateSpecialAbility();
+	
 }
