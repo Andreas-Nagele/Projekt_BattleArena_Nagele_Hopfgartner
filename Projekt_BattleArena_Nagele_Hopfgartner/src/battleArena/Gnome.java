@@ -19,5 +19,20 @@ public class Gnome extends Character{
 				+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
 	}
 	
+	public void getDamage() {
+		
+	}
+	
+	public void attack() {
+		
+	}
+	
+	public void activateSpecialAbility() {
+		
+	}
+	
+	public void deactivateSpecialAbility() {
+		
+	}
 	
 }
