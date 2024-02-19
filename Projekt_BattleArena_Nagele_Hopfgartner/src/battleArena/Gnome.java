@@ -1,5 +1,5 @@
 package battleArena;
 
-public class Gnome {
+public class Gnome extends Character{
 
 }
