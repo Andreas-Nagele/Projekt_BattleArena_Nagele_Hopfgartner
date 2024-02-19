@@ -32,6 +32,5 @@ public class Dragon extends Character{
 	
 	public void deactivateSpecialAbility() {
 		this.setAttackStrength(ThreadLocalRandom.current().nextInt(20, 26));
-		this.setHearts(getHearts() - 10);
 	}
 }
