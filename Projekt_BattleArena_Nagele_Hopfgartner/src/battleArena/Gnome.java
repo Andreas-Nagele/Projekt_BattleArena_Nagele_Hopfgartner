@@ -20,15 +20,37 @@ public class Gnome extends Character{
 	}
 	
 	public void getDamage(int points) {
-		
+		this.setHearts(this.getHearts() - points);
 	}
 	
 	public void attack(Character enemy) {
 		
 	}
 	
+	public boolean random() {
+		int rand = ThreadLocalRandom.current().nextInt(0, 11);
+		if(this.getHearts() <= 50 && this.getHearts() > 20) {
+			if(rand > 0 && rand < 3) {
+				return true;
+			}
+		}
+		else if(this.getHearts() <= 20 && this.getHearts() > 10) {
+			if(rand > 0 && rand < 5) {
+				return true;
+			}
+		}
+		else if(this.getHearts() <= 10) {
+			if(rand > 0 && rand < 7) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
 	public void activateSpecialAbility() {
-		
+		if(this.getHearts() < 50) {
+			
+		}
 	}
 	
 	public void deactivateSpecialAbility() {
