@@ -1,6 +1,6 @@
 package battleArena;
 
-public class Character {
+public abstract class Character {
 	private String name;
 	private int attackStrength;
 	private int hearts;
