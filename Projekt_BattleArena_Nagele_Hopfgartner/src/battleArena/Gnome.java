@@ -19,11 +19,11 @@ public class Gnome extends Character{
 				+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
 	}
 	
-	public void getDamage() {
+	public void getDamage(int points) {
 		
 	}
 	
-	public void attack() {
+	public void attack(Character enemy) {
 		
 	}
 	
