@@ -26,11 +26,13 @@ public class Dragon extends Character{
 	}
 	
 	public void activateSpecialAbility() {
+		this.setSpecialAbilityActive(true);
 		this.setAttackStrength(this.getAttackStrength() - ThreadLocalRandom.current().nextInt(5, 11));
 		this.setHearts(getHearts() + 10);
 	}
 	
 	public void deactivateSpecialAbility() {
+		this.setSpecialAbilityActive(false);
 		this.setAttackStrength(ThreadLocalRandom.current().nextInt(20, 26));
 	}
 }
