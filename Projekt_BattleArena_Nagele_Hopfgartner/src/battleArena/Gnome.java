@@ -24,10 +24,13 @@ public class Gnome extends Character{
 	}
 	
 	public void attack(Character enemy) {
+		if (this.isSpecialAbilityActive()) {
+			enemy.setHearts(getHearts() - this.getAttackStrength());
+		}
 		
 	}
 	
-	public boolean random() {
+	public boolean isSpecialAbilitySuccesfull() {
 		int rand = ThreadLocalRandom.current().nextInt(0, 11);
 		if(this.getHearts() <= 50 && this.getHearts() > 20) {
 			if(rand > 0 && rand < 3) {
@@ -48,13 +51,18 @@ public class Gnome extends Character{
 	}
 	
 	public void activateSpecialAbility() {
-		if(this.getHearts() < 50) {
-			
+		if(this.getHearts() < 50 && isSpecialAbilitySuccesfull() == true) {
+			this.setSpecialAbilityActive(true);
+			this.setAttackStrength(getAttackStrength() * 2);
+		}
+		else {
+			this.setSpecialAbilityActive(true);
+			this.setAttackStrength(getAttackStrength() / 2);
 		}
 	}
 	
 	public void deactivateSpecialAbility() {
-		
+		this.setSpecialAbilityActive(false);
 	}
 	
 }
