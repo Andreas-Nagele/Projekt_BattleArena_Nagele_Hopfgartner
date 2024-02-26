@@ -11,10 +11,16 @@ public class Dragon extends Character{
 		this.setSpecialAbilityActive(false);
 	}
 	
+	/**
+	 * Method substracts the damage from the hearts
+	 */
 	public void getDamage(int points) {
 		this.setHearts(this.getHearts() - points);
 	}
 	
+	/**
+	 * Method gives the attack damage between 20 and 25
+	 */
 	public void attack(Character enemy) {
 		enemy.setHearts(this.getHearts() - this.getAttackStrength());
 		this.setAttackStrength(ThreadLocalRandom.current().nextInt(20, 26));
@@ -23,12 +29,19 @@ public class Dragon extends Character{
 		}
 	}
 	
+	/**
+	 * Method activates Special Ability and adds 10 bonus hearts
+	 */
 	public void activateSpecialAbility() {
 		this.setSpecialAbilityActive(true);
 		this.setAttackStrength(this.getAttackStrength() - ThreadLocalRandom.current().nextInt(5, 11));
 		this.setHearts(getHearts() + 10);
 	}
 	
+	
+	/**
+	 * Method deactivates Special Ability and removes the bonus hearts and sets the attackStrength back between 20 and 25
+	 */
 	public void deactivateSpecialAbility() {
 		this.setSpecialAbilityActive(false);
 		this.setAttackStrength(ThreadLocalRandom.current().nextInt(20, 26));
