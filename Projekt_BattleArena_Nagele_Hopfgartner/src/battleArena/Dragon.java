@@ -16,22 +16,22 @@ public class Dragon extends Character{
 	}
 	
 	public void attack(Character enemy) {
-		if (this.isSpecialAbilityActive() == true) {
-			this.activateSpecialAbility();
-			enemy.setHearts(enemy.getHearts() - this.getAttackStrength());
-		}
-		else {
-			this.deactivateSpecialAbility();
-			enemy.setHearts(enemy.getHearts() - this.getAttackStrength());
+		enemy.setHearts(this.getHearts() - this.getAttackStrength());
+		this.setAttackStrength(ThreadLocalRandom.current().nextInt(20, 26));
+		if (this.isSpecialAbilityActive()) {
+			this.setAttackStrength(getAttackStrength() - ThreadLocalRandom.current().nextInt(5, 11));
 		}
 	}
 	
 	public void activateSpecialAbility() {
+		this.setSpecialAbilityActive(true);
 		this.setAttackStrength(this.getAttackStrength() - ThreadLocalRandom.current().nextInt(5, 11));
 		this.setHearts(getHearts() + 10);
 	}
 	
 	public void deactivateSpecialAbility() {
+		this.setSpecialAbilityActive(false);
 		this.setAttackStrength(ThreadLocalRandom.current().nextInt(20, 26));
+		this.setHearts(getHearts() - 10);
 	}
 }
