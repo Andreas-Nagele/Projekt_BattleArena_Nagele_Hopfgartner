@@ -1,6 +1,9 @@
 package battleArena;
 
+import java.util.Scanner;
+
 public class BattleArena {
+	Scanner sc = new Scanner(System.in);
 	
 	private Character c1;
 	private Character c2;
@@ -31,6 +34,17 @@ public class BattleArena {
 		this.winner = winner;
 	}
 	
+	public void simulateCombat(Character attacker, Character victim) {
+		System.out.println("Angreifer, bitte gib deinen Zug ein: (Angriff, Spezialfähigkeit aktivieren, Spezialfähigkeit deaktivieren)");
+		String input = sc.next();
+		if (!input.equalsIgnoreCase("Angriff") || !input.equalsIgnoreCase("Spezialfähigkeit aktivieren")
+			|| !input.equalsIgnoreCase("Spezialfähigkeit deaktivieren")) {
+			System.out.println("Falsche Eingabe! Bitte erneut auswählen!");
+		}
+	}
 	
+	public void fight() {
+		
+	}
 
 }
