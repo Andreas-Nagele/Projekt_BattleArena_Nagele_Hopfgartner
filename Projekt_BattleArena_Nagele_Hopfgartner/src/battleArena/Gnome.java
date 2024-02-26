@@ -33,6 +33,9 @@ public class Gnome extends Character{
 	public void attack(Character enemy) {
 		enemy.setHearts(this.getHearts() - this.getAttackStrength());
 		this.setAttackStrength(ThreadLocalRandom.current().nextInt(15, 26));
+		if (this.isSpecialAbilityActive()) {
+			this.deactivateSpecialAbility();
+		}
 		
 	}
 	
@@ -64,9 +67,12 @@ public class Gnome extends Character{
 	 * Special ability can be activated if the gnome has under 50 hearts
 	 */
 	public void activateSpecialAbility() {
-		if (this.isSpecialAbilitySuccesfull()) {
+		if (this.isSpecialAbilitySuccesfull() && this.getHearts() < 50) {
 			this.setSpecialAbilityActive(true);
-			this.s
+			this.setAttackStrength(this.getAttackStrength() * 2);
+		} else if (!this.isSpecialAbilitySuccesfull() && this.getHearts() < 50) {
+			this.setSpecialAbilityActive(true);
+			this.setAttackStrength(this.getAttackStrength() / 2);
 		}
 	}
 	
@@ -75,6 +81,7 @@ public class Gnome extends Character{
 	 */
 	public void deactivateSpecialAbility() {
 		this.setSpecialAbilityActive(false);
+		this.setAttackStrength(ThreadLocalRandom.current().nextInt(15, 26));
 	}
 	
 }
