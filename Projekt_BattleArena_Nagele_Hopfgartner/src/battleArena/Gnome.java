@@ -31,12 +31,10 @@ public class Gnome extends Character{
 	 * Method substracts the attack strength from the enemys hearts
 	 */
 	public void attack(Character enemy) {
-		if (this.isSpecialAbilityActive()) {
-			enemy.setHearts(getHearts() - this.getAttackStrength());
-		}
+		enemy.setHearts(this.getHearts() - this.getAttackStrength());
+		this.setAttackStrength(ThreadLocalRandom.current().nextInt(15, 26));
 		
 	}
-	
 	
 	/**
 	 * Method gives a random number if the number is between the border
@@ -66,7 +64,10 @@ public class Gnome extends Character{
 	 * Special ability can be activated if the gnome has under 50 hearts
 	 */
 	public void activateSpecialAbility() {
-		
+		if (this.isSpecialAbilitySuccesfull()) {
+			this.setSpecialAbilityActive(true);
+			this.s
+		}
 	}
 	
 	/**
