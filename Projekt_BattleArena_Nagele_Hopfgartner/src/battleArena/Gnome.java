@@ -19,10 +19,17 @@ public class Gnome extends Character{
 				+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
 	}
 	
+	
+	/**
+	 * Method substract the points of the damage of your hearts
+	 */
 	public void getDamage(int points) {
 		this.setHearts(this.getHearts() - points);
 	}
 	
+	/**
+	 * Method substracts the attack strength from the enemys hearts
+	 */
 	public void attack(Character enemy) {
 		if (this.isSpecialAbilityActive()) {
 			enemy.setHearts(getHearts() - this.getAttackStrength());
@@ -30,6 +37,11 @@ public class Gnome extends Character{
 		
 	}
 	
+	
+	/**
+	 * Method gives a random number if the number is between the border
+	 * @return true if it is between, false if it is not between
+	 */
 	public boolean isSpecialAbilitySuccesfull() {
 		int rand = ThreadLocalRandom.current().nextInt(0, 11);
 		if(this.getHearts() <= 50 && this.getHearts() > 20) {
@@ -50,6 +62,9 @@ public class Gnome extends Character{
 		return false;
 	}
 	
+	/**
+	 * Special ability can be activated if the gnome has under 50 hearts
+	 */
 	public void activateSpecialAbility() {
 		if(this.getHearts() < 50 && isSpecialAbilitySuccesfull() == true) {
 			this.setSpecialAbilityActive(true);
@@ -61,6 +76,9 @@ public class Gnome extends Character{
 		}
 	}
 	
+	/**
+	 * Method deactivates special Ability
+	 */
 	public void deactivateSpecialAbility() {
 		this.setSpecialAbilityActive(false);
 	}
