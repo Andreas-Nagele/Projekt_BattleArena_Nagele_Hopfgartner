@@ -51,14 +51,7 @@ public class Gnome extends Character{
 	}
 	
 	public void activateSpecialAbility() {
-		if(this.getHearts() < 50 && isSpecialAbilitySuccesfull() == true) {
-			this.setSpecialAbilityActive(true);
-			this.setAttackStrength(getAttackStrength() * 2);
-		}
-		else {
-			this.setSpecialAbilityActive(true);
-			this.setAttackStrength(getAttackStrength() / 2);
-		}
+		
 	}
 	
 	public void deactivateSpecialAbility() {
