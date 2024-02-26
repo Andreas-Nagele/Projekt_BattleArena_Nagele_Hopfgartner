@@ -65,6 +65,7 @@ public class Gnome extends Character{
 	
 	/**
 	 * Special ability can be activated if the gnome has under 50 hearts
+	 * and multiplys attack damage times 2
 	 */
 	public void activateSpecialAbility() {
 		if (this.isSpecialAbilitySuccesfull() && this.getHearts() < 50) {
