@@ -1,6 +1,7 @@
 package battleArena;
 
 import java.util.Scanner;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class BattleArena {
 	Scanner sc = new Scanner(System.in);
@@ -44,7 +45,13 @@ public class BattleArena {
 	}
 	
 	public void fight() {
-		
+			int start = ThreadLocalRandom.current().nextInt(0, 2);
+			Character attacker = start == 0 ? c1 : c2;
+			Character victim = start == 1 ? c1 : c2;
+			while (c1.getHearts() >= 0 || c2.getHearts() >=0) {
+				simulateCombat(attacker, victim);
+				attacker = attacker == c1 ? c2 : c1;
+				victim = victim == c2 ? c1 : c2;
+			}
+		}
 	}
-
-}
