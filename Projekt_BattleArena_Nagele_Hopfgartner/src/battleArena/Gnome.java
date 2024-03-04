@@ -22,8 +22,13 @@ public class Gnome extends Character{
 	 * Method substract the points of the damage of your hearts
 	 */
 	public void getDamage(int points) {
-		this.setHearts(this.getHearts() - points);
+		if(this.getHearts() - points < 0) {
+			this.setHearts(0);
+		}else {
+			this.setHearts(this.getHearts() - points);
+		}
 	}
+		
 	
 	/**
 	 * Method substracts the attack strength from the enemys hearts
