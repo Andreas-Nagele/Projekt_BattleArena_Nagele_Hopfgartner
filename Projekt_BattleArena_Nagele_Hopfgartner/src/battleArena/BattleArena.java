@@ -74,7 +74,7 @@ public class BattleArena {
 		int start = ThreadLocalRandom.current().nextInt(0, 2);
 		Character attacker = start == 0 ? c1 : c2;
 		Character victim = start == 1 ? c1 : c2;
-		while (c1.getHearts() >= 0 && c2.getHearts() >=0) {
+		while (c1.getHearts() > 0 && c2.getHearts() >0) {
 			boolean input = simulateCombat(attacker, victim);
 			if (input == true) {
 				attacker = attacker == c1 ? c2 : c1;
