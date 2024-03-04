@@ -65,6 +65,10 @@ public class BattleArena {
 		return inp;
 	}
 	
+	private void printStatistics(Character c) {
+		System.out.println(c.getName() + "hat aktuell" + c.getHearts() + "Herzen");
+	}
+
 	/*
 	 * Initialises a fight using a simulateCombat method
 	 */
@@ -77,7 +81,11 @@ public class BattleArena {
 			if (input == true) {
 				attacker = attacker == c1 ? c2 : c1;
 				victim = victim == c2 ? c1 : c2;
+				printStatistics(attacker);
+				printStatistics(victim);
 			}
 		}
 	}
+	
+	
 }
