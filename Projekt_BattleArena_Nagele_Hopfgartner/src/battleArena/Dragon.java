@@ -51,7 +51,7 @@ public class Dragon extends Character{
 	@Override
 	public String toString() {
 		return "Dragon: " + getName() + "\n " + "Angriffsstärke: " + getAttackStrength() + "\n" + "Herzen: " + 
-				getHearts() + "\n" + "Spezialfähigkeit: " + isSpecialAbilityActive();
+				getHearts() + "\n" + "Spezialfähigkeit: " + isSpecialAbilityActive() + "\n";
 	}
 	
 	
