@@ -47,4 +47,12 @@ public class Dragon extends Character{
 		this.setAttackStrength(ThreadLocalRandom.current().nextInt(20, 26));
 		this.setHearts(getHearts() - 10);
 	}
+
+	@Override
+	public String toString() {
+		return "Dragon: " + getName() + "\n " + "Angriffsstärke: " + getAttackStrength() + "\n" + "Herzen: " + 
+				getHearts() + "\n" + "Spezialfähigkeit: " + isSpecialAbilityActive();
+	}
+	
+	
 }
