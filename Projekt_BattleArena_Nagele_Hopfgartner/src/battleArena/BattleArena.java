@@ -63,7 +63,7 @@ public class BattleArena {
 	}
 	
 	private void printStatistics(Character c) {
-		System.out.println(c.getName() + "hat aktuell " + c.getHearts() + " Herzen");
+		System.out.println(c.getName() + " hat aktuell " + c.getHearts() + " Herzen");
 	}
 
 	/*
