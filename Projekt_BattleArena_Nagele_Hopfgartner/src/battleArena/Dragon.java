@@ -15,7 +15,12 @@ public class Dragon extends Character{
 	 * Method substracts the damage from the hearts
 	 */
 	public void getDamage(int points) {
-		this.setHearts(this.getHearts() - points);
+		if (this.getHearts() - points < 0) {
+			this.setHearts(0);
+		}
+		else {
+			this.setHearts(this.getHearts() - points);
+		}
 	}
 	
 	/**
