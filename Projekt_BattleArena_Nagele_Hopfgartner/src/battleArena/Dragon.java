@@ -27,7 +27,7 @@ public class Dragon extends Character{
 	 * Method gives the attack damage between 20 and 25
 	 */
 	public void attack(Character enemy) {
-		enemy.setHearts(this.getHearts() - this.getAttackStrength());
+		enemy.getDamage(this.getAttackStrength());
 		this.setAttackStrength(ThreadLocalRandom.current().nextInt(20, 26));
 		if (this.isSpecialAbilityActive()) {
 			this.setAttackStrength(getAttackStrength() - ThreadLocalRandom.current().nextInt(5, 11));
