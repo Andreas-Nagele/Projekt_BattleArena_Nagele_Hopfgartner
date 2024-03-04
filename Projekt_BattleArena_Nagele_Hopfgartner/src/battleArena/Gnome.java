@@ -12,11 +12,9 @@ public class Gnome extends Character{
 		this.setSpecialAbilityActive(false);
 	}
 
-	@Override
 	public String toString() {
-		return "Gnome [getName()=" + getName() + ", getAttackStrength()=" + getAttackStrength() + ", getHearts()="
-				+ getHearts() + ", isSpecialAbilityActive()=" + isSpecialAbilityActive() + ", getClass()=" + getClass()
-				+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
+		return "Name: " + getName() + "/n" + " Angriffsstärke: " + getAttackStrength() + "\n" + " Herzen " + getHearts() + "\n" + 
+				"Spezialfähigkeit" + isSpecialAbilityActive();
 	}
 	
 	
