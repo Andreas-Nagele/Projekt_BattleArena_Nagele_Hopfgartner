@@ -45,17 +45,14 @@ public class BattleArena {
 		switch(input) {
 			case "Angriff" :
 				attacker.attack(victim);
-				System.out.println("Herzen von " + victim.getName() + ": " + attacker.getHearts());
 				inp = true;
 				break;
 			case "Spezialfähigkeit aktivieren":
 				attacker.activateSpecialAbility();
-				System.out.println("Spezialfähigkeit von " + attacker.getName() + " wurde aktiviert!");
 				inp = true;
 				break;
 			case "Spezialfähigkeit deaktivieren":
 				attacker.deactivateSpecialAbility();
-				System.out.println("Spezialfähigkeit von " + attacker.getName() + " wurde deaktiviert!");
 				inp = true;
 				break;
 			default:
@@ -66,7 +63,7 @@ public class BattleArena {
 	}
 	
 	private void printStatistics(Character c) {
-		System.out.println(c.getName() + "hat aktuell" + c.getHearts() + "Herzen");
+		System.out.println(c.getName() + "hat aktuell " + c.getHearts() + " Herzen");
 	}
 
 	/*
