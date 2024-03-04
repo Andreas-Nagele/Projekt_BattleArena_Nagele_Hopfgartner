@@ -34,7 +34,7 @@ public class Gnome extends Character{
 	 * Method substracts the attack strength from the enemys hearts
 	 */
 	public void attack(Character enemy) {
-		enemy.setHearts(this.getHearts() - this.getAttackStrength());
+		enemy.getDamage(this.getAttackStrength());
 		this.setAttackStrength(ThreadLocalRandom.current().nextInt(15, 26));
 		if (this.isSpecialAbilityActive()) {
 			this.deactivateSpecialAbility();
