@@ -35,6 +35,9 @@ public class BattleArena {
 		this.winner = winner;
 	}
 	
+	/*
+	 * Simulates combat between attacker and victim
+	 */
 	public boolean simulateCombat(Character attacker, Character victim) {
 		boolean inp = false;
 		System.out.println(attacker.getName() + " , bitte gib deinen Zug ein: (Angriff, Spezialfähigkeit aktivieren, Spezialfähigkeit deaktivieren");
