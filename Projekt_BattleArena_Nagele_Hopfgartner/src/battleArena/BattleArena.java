@@ -65,6 +65,9 @@ public class BattleArena {
 		return inp;
 	}
 	
+	/*
+	 * Initialises a fight using a simulateCombat method
+	 */
 	public void fight() {
 		int start = ThreadLocalRandom.current().nextInt(0, 2);
 		Character attacker = start == 0 ? c1 : c2;
