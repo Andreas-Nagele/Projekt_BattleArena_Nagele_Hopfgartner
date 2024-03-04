@@ -40,7 +40,7 @@ public class BattleArena {
 	 */
 	public boolean simulateCombat(Character attacker, Character victim) {
 		boolean inp = false;
-		System.out.println(attacker.getName() + " , bitte gib deinen Zug ein: (Angriff, Spezialfähigkeit aktivieren, Spezialfähigkeit deaktivieren");
+		System.out.println(attacker.getName() + ", bitte gib deinen Zug ein: (Angriff, Spezialfähigkeit aktivieren, Spezialfähigkeit deaktivieren");
 		String input = sc.nextLine();
 		switch(input) {
 			case "Angriff" :
@@ -64,6 +64,7 @@ public class BattleArena {
 	
 	private void printStatistics(Character c) {
 		System.out.println(c.getName() + " hat aktuell " + c.getHearts() + " Herzen");
+		
 	}
 
 	/*
