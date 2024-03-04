@@ -35,23 +35,43 @@ public class BattleArena {
 		this.winner = winner;
 	}
 	
-	public void simulateCombat(Character attacker, Character victim) {
-		System.out.println("Angreifer, bitte gib deinen Zug ein: (Angriff, Spezialfähigkeit aktivieren, Spezialfähigkeit deaktivieren)");
-		String input = sc.next();
-		if (!input.equalsIgnoreCase("Angriff") || !input.equalsIgnoreCase("Spezialfähigkeit aktivieren")
-			|| !input.equalsIgnoreCase("Spezialfähigkeit deaktivieren")) {
-			System.out.println("Falsche Eingabe! Bitte erneut auswählen!");
+	public boolean simulateCombat(Character attacker, Character victim) {
+		boolean inp = false;
+		System.out.println(attacker.getName() + " , bitte gib deinen Zug ein: (Angriff, Spezialfähigkeit aktivieren, Spezialfähigkeit deaktivieren");
+		String input = sc.nextLine();
+		switch(input) {
+			case "Angriff" :
+				attacker.attack(victim);
+				System.out.println("Herzen von " + victim.getName() + ": " + attacker.getHearts());
+				inp = true;
+				break;
+			case "Spezialfähigkeit aktivieren":
+				attacker.activateSpecialAbility();
+				System.out.println("Spezialfähigkeit von " + attacker.getName() + " wurde aktiviert!");
+				inp = true;
+				break;
+			case "Spezialfähigkeit deaktivieren":
+				attacker.deactivateSpecialAbility();
+				System.out.println("Spezialfähigkeit von " + attacker.getName() + " wurde deaktiviert!");
+				inp = true;
+				break;
+			default:
+				System.out.println("Falsche Eingabe: Bitte erneut wählen!");
+				inp = false;
 		}
+		return inp;
 	}
 	
 	public void fight() {
-			int start = ThreadLocalRandom.current().nextInt(0, 2);
-			Character attacker = start == 0 ? c1 : c2;
-			Character victim = start == 1 ? c1 : c2;
-			while (c1.getHearts() >= 0 || c2.getHearts() >=0) {
-				simulateCombat(attacker, victim);
+		int start = ThreadLocalRandom.current().nextInt(0, 2);
+		Character attacker = start == 0 ? c1 : c2;
+		Character victim = start == 1 ? c1 : c2;
+		while (c1.getHearts() >= 0 || c2.getHearts() >=0) {
+			boolean input = simulateCombat(attacker, victim);
+			if (input == true) {
 				attacker = attacker == c1 ? c2 : c1;
 				victim = victim == c2 ? c1 : c2;
 			}
 		}
 	}
+}
