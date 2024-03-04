@@ -13,8 +13,8 @@ public class Gnome extends Character{
 	}
 
 	public String toString() {
-		return "Name: " + getName() + "/n" + " Angriffsstärke: " + getAttackStrength() + "\n" + " Herzen " + getHearts() + "\n" + 
-				"Spezialfähigkeit" + isSpecialAbilityActive();
+		return "Name: " + getName() + "\n" + " Angriffsstärke: " + getAttackStrength() + "\n" + " Herzen: " + getHearts() + "\n" + 
+				"Spezialfähigkeit: " + isSpecialAbilityActive();
 	}
 	
 	
