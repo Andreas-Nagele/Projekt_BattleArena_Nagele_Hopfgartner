@@ -38,9 +38,14 @@ public class Dragon extends Character{
 	 * Method activates Special Ability and adds 10 bonus hearts
 	 */
 	public void activateSpecialAbility() {
-		this.setSpecialAbilityActive(true);
-		this.setAttackStrength(this.getAttackStrength() - ThreadLocalRandom.current().nextInt(5, 11));
-		this.setHearts(getHearts() + 10);
+		if (this.isSpecialAbilityActive() == false) {
+			this.setSpecialAbilityActive(true);
+			this.setAttackStrength(this.getAttackStrength() - ThreadLocalRandom.current().nextInt(5, 11));
+			this.setHearts(getHearts() + 10);
+		}
+		else {
+			System.out.println("Spezialfähigkeit wurde bereits aktiviert!");
+		}
 	}
 	
 	
