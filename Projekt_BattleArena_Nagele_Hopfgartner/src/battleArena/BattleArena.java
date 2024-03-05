@@ -40,18 +40,18 @@ public class BattleArena {
 	 */
 	public boolean simulateCombat(Character attacker, Character victim) {
 		boolean inp = false;
-		System.out.println(attacker.getName() + ", bitte gib deinen Zug ein: (Angriff, Spezialfähigkeit aktivieren, Spezialfähigkeit deaktivieren");
-		String input = sc.nextLine();
+		System.out.println(attacker.getName() + ", bitte gib deine Zugnummer ein: (1 : Angriff, 2 : Spezialfähigkeit aktivieren, 3 : Spezialfähigkeit deaktivieren");
+		int input = sc.nextInt();
 		switch(input) {
-			case "Angriff" :
+			case 1 :
 				attacker.attack(victim);
 				inp = true;
 				break;
-			case "Spezialfähigkeit aktivieren":
+			case 2:
 				attacker.activateSpecialAbility();
 				inp = true;
 				break;
-			case "Spezialfähigkeit deaktivieren":
+			case 3:
 				attacker.deactivateSpecialAbility();
 				inp = true;
 				break;
@@ -62,9 +62,16 @@ public class BattleArena {
 		return inp;
 	}
 	
-	private void printStatistics(Character c) {
-		System.out.println(c.getName() + " hat aktuell " + c.getHearts() + " Herzen");
-		
+	private void printStatistics() {
+		System.out.println("Statistiken von " + this.c1.getName() + " :");
+		System.out.println("\tHerzen: " + this.c1.getHearts());
+		System.out.println("\tderz. Angriffsstärke: " + this.c1.getAttackStrength());
+		System.out.println("\tSpezialfähigkeit aktiviert? " + this.c1.isSpecialAbilityActive());
+		System.out.println("");
+		System.out.println("Statistiken von " + this.c2.getName() + " :");
+		System.out.println("\tHerzen: " + this.c2.getHearts());
+		System.out.println("\tderz. Angriffsstärke: " + this.c2.getAttackStrength());
+		System.out.println("\tSpezialfähigkeit aktiviert? " + this.c2.isSpecialAbilityActive());
 	}
 
 	/*
@@ -79,9 +86,9 @@ public class BattleArena {
 			if (input == true) {
 				attacker = attacker == c1 ? c2 : c1;
 				victim = victim == c2 ? c1 : c2;
-				printStatistics(attacker);
-				printStatistics(victim);
+				printStatistics();
 			}
 		}
+		System.out.println("Gewonnen hat: " + (victim.getHearts() == 0 ? attacker.getName() : victim.getName()));
 	}
 }
