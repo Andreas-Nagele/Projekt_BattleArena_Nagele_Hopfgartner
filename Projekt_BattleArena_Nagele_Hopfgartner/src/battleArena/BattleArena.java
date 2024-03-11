@@ -100,6 +100,37 @@ public class BattleArena {
 	 * Initialises a fight using a simulateCombat method
 	 */
 	public void fight() {
+		System.out.println("Spieler 1, bitte wähle deine Charakterart! 1 = Dragon, 2 = Gnome");
+		int dtc1 = sc.nextInt();
+		System.out.println("Spieler 1, bitte wähle deinen Charakternamen!");
+		String c11 = sc.next();
+		System.out.println("Spieler 2, bitte wähle deine Charakterart! 1 = Dragon, 2 = Gnome");
+		int dtc2 = sc.nextInt();
+		System.out.println("Spieler 2, bitte wähle deinen Charakternamen!");
+		String c22 = sc.next();
+		
+		switch(dtc1) {
+			case 1:
+				Character d1 = new Dragon(c11);
+				this.setC1(d1);
+				break;
+			case 2:
+				Character g1 = new Gnome(c11);
+				this.setC1(g1);
+				break;
+		}
+		
+		switch(dtc2) {
+			case 1:
+				Character d2 = new Dragon(c22);
+				this.setC2(d2);
+				break;
+			case 2:
+				Character g2 = new Gnome(c22);
+				this.setC2(g2);
+				break;
+		}
+		
 		int start = ThreadLocalRandom.current().nextInt(0, 2);
 		Character attacker = start == 0 ? c1 : c2;
 		Character victim = start == 1 ? c1 : c2;
