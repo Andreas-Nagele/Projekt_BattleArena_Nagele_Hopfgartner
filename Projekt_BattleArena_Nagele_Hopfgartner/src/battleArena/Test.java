@@ -42,9 +42,14 @@ public class Test {
 	}
 	
 	public static void main(String[] args) {	
+		Scanner sc = new Scanner(System.in);
+		
 		BattleArena b = new BattleArena(null, null);
 		init(b);
 		b.fight();
+
+		sc.close();
+		
 	}
 
 }
