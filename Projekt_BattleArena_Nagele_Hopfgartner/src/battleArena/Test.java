@@ -30,16 +30,12 @@ public class Test {
 		Scanner sc = new Scanner(System.in);
 		
 		
-		
-<<<<<<< HEAD
-		
 		BattleArena b = new BattleArena(null, null);
 		init(b);
 		b.fight();
 		
-=======
->>>>>>> branch 'master' of https://github.com/Andreas-Nagele/Projekt_BattleArena_Nagele_Hopfgartner.git
 		sc.close();
+		
 	}
 
 }
