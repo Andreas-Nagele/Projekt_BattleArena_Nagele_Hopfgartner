@@ -29,17 +29,16 @@ public class Test {
 	public static void main(String[] args) {	
 		Scanner sc = new Scanner(System.in);
 		
-		Character c = new Dragon("Willhelm");
-		System.out.println(c);
-		Character c3 = new Gnome("Constantin");
-		System.out.println(c3);
 		
 		
+<<<<<<< HEAD
 		
 		BattleArena b = new BattleArena(null, null);
 		init(b);
 		b.fight();
 		
+=======
+>>>>>>> branch 'master' of https://github.com/Andreas-Nagele/Projekt_BattleArena_Nagele_Hopfgartner.git
 		sc.close();
 	}
 
