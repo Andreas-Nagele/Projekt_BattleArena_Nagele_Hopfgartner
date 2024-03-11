@@ -6,40 +6,45 @@ public class Test {
 
 	public static void init(BattleArena b) {
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Spieler 1, bitte wähle deine Charakterart!");
-		String c1 = sc.nextLine();
-		System.out.println("Spieler 1, bitte wähle deine Charakterart!");
-		System.out.println("Spieler 2, bitte wähle deinen Character!");
-		String c2 = sc.nextLine();
-		do {
-			for (Character c : b.getList()) {
-				if (c.getName().equalsIgnoreCase(c1)) {
-					b.setC1(c);
-				}
-			}
-		}while (b.getC1() == null);
 		
-		for (Character c : b.getList()) {
-			if(c.getName().equalsIgnoreCase(c2)) {
-				b.setC2(c);
-			}
+		System.out.println("Spieler 1, bitte wähle deine Charakterart! 1 = Dragon, 2 = Gnome");
+		int c1 = sc.nextInt();
+		System.out.println("Spieler 1, bitte wähle deinen Charakternamen!");
+		String c11 = sc.next();
+		System.out.println("Spieler 2, bitte wähle deine Charakterart! 1 = Dragon, 2 = Gnome");
+		int c2 = sc.nextInt();
+		System.out.println("Spieler 2, bitte wähle deinen Charakternamen!");
+		String c22 = sc.next();
+		
+		switch(c1) {
+			case 1:
+				Character d1 = new Dragon(c11);
+				b.setC1(d1);
+				break;
+			case 2:
+				Character g1 = new Gnome(c11);
+				b.setC1(g1);
+				break;
 		}
+		
+		switch(c2) {
+			case 1:
+				Character d2 = new Dragon(c22);
+				b.setC2(d2);
+				break;
+			case 2:
+				Character g2 = new Gnome(c22);
+				b.setC2(g2);
+				break;
+		}
+		
+		sc.close();
 	}
 	
 	public static void main(String[] args) {	
-		Scanner sc = new Scanner(System.in);
-		
-		
-		
-<<<<<<< HEAD
-		
 		BattleArena b = new BattleArena(null, null);
 		init(b);
 		b.fight();
-		
-=======
->>>>>>> branch 'master' of https://github.com/Andreas-Nagele/Projekt_BattleArena_Nagele_Hopfgartner.git
-		sc.close();
 	}
 
 }
