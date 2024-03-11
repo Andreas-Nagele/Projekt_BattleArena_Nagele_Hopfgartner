@@ -1,5 +1,6 @@
 package battleArena;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -9,11 +10,13 @@ public class BattleArena {
 	private Character c1;
 	private Character c2;
 	private Character winner;
+	private ArrayList <Character>list;
 	
 	public BattleArena(Character c1, Character c2) {
 		this.c1 = c1;
 		this.c2 = c2;
 		this.winner = null;
+		this.list = new ArrayList<Character>(); 
 	}
 
 	public Character getC1() {
@@ -33,6 +36,25 @@ public class BattleArena {
 	}
 	public void setWinner(Character winner) {
 		this.winner = winner;
+	}	
+	public ArrayList<Character> getList() {
+		return list;
+	}
+	public void setList(ArrayList<Character> list) {
+		this.list = list;
+	}
+	
+	public void addCharacter (Character c ) {
+		if (!this.list.contains(c)) {
+			this.list.add(c);
+		}
+		else {
+			System.err.println("Character wurde bereits angelegt!");
+		}
+	}
+
+	public void deleteCharacter (Character c ) {
+		this.list.remove(c);
 	}
 	
 	/**
