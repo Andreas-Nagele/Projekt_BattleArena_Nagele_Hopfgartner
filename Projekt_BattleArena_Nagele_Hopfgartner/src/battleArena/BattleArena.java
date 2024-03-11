@@ -35,7 +35,7 @@ public class BattleArena {
 		this.winner = winner;
 	}
 	
-	/*
+	/**
 	 * Simulates combat between attacker and victim
 	 */
 	public boolean simulateCombat(Character attacker, Character victim) {
@@ -74,7 +74,7 @@ public class BattleArena {
 		System.out.println("\tSpezialfähigkeit aktiviert? " + this.c2.isSpecialAbilityActive());
 	}
 
-	/*
+	/**
 	 * Initialises a fight using a simulateCombat method
 	 */
 	public void fight() {
@@ -89,6 +89,8 @@ public class BattleArena {
 				printStatistics();
 			}
 		}
-		System.out.println("Gewonnen hat: " + (victim.getHearts() == 0 ? attacker.getName() : victim.getName()));
+		this.setWinner(victim.getHearts() == 0 ? attacker : victim);
+		System.out.println("Gewonnen hat: " + this.getWinner().getName());
+		
 	}
 }
